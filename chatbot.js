@@ -8,36 +8,40 @@ function submitButton() {
 
 //*Variables for all the Questions/responses*//
 
-   var n = input.search(/how are you/i);
+   var n = input.search(/how are you?/i);
+   var a = input.search(/how old are you?/i);
+   var b = input.search(/what is your name?/i);
+   var c = input.search(/what time is it?/i);
 
 
-   chatBox = document.getElementById("chat-area").innerHTML +=  "Question: " + question;
+   chatBox = document.getElementById("chat-area").innerHTML +=  "You: " + question;
 
-   document.getElementById("input").value = null;
 
-   if(input == "hello" || input =="Hello"){
-     document.getElementById("chat-area").innerHTML +=  "Response: " + "Hello there! nice to meet you" + "<br>";
+   if(input == "hello" || input =="Hello" || input=="hi" || input == "Hi"){
+     document.getElementById("chat-area").innerHTML +=  "Harambe: " + "Hello there! nice to meet you" + "<br>";
    }
    /*how are you response*/
 
-   /*else if(n == -1){
-     document.getElementById("chat-area").innerHTML +=  "Response: " + "Im fine, how are you?" + "<br>";
-   }
    else if(n > -1){
-     document.getElementById("chat-area").innerHTML +=  "Response: Im fine, how are  you?" + "" + "<br>";
+     document.getElementById("chat-area").innerHTML +=  "Harambe: " + "Im fine, how are you?" + "<br>";
    }
-  /*How old are you question*/
-
-   else if(input == "how old are you?"){
-     document.getElementById("chat-area").innerHTML +=  "Response: " + "I am a robot, I have no age" + "<br>";
+  /*How old areyou question*/
+   else if(a > -1){
+     document.getElementById("chat-area").innerHTML +=  "Harambe: " + "I am a robot, I have no age" + "<br>";
    }
 
    /*What is your name question*/
-   else if(input == "what is your name?" && "What is your name?"){
-    document.getElementById("chat-area").innerHTML +=  "Response:    You can call me H A R A M B E" + "<br>";
-   }
+   else if(b > -1){
+    document.getElementById("chat-area").innerHTML +=  "Harambe:    You can call me H A R A M B E" + "<br>";
+  }
+
+  /*What is the time question*/
+  else if(c > -1){
+   document.getElementById("chat-area").innerHTML += "Harambe:    You can call me H A R A M B E" + "<br>";
+ }
 
    else{
-    document.getElementById("chat-area").innerHTML +=  "Response:  I dont think I got that, please try again." + "<br>";
+    document.getElementById("chat-area").innerHTML +=  "Harambe:    You can call me H A R A M B E" + "<br>"
    }
+   document.getElementById("input").value = null;
 }
