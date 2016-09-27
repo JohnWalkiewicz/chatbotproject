@@ -7,13 +7,18 @@ function submitButton() {
    input =  document.getElementById("input").value;
    question = input + "<br>";
 
+   /*Randon number generator*/
+
+   function randomNumberGenerator() {
+     return Math.floor(Math.random()*(max-min+1)+min);
+   }
+
 /*Enter key*/
 
 
 //*Variables for all the Questions/responses*//
 
-  var audio = new Audio('idubbbz.mp3');
-  var audio2 = new Audio('ripharambe.mp3');
+
 
    var n = input.search(/how are you?/i);
    var a = input.search(/how old are you?/i);
@@ -35,34 +40,34 @@ function submitButton() {
 
 /*Hello*/
    if(input == "hello" || input =="Hello" || input=="hi" || input == "Hi"){
-     document.getElementById("chat-area").innerHTML +=  "Harambe: " + "Hello there! nice to meet you" + "<br>";
+     document.getElementById("chat-area").innerHTML +=  "ChatBot: " + "Hello there! nice to meet you" + "<br>";
    }
    /*how are you response*/
 
    else if(n > -1){
-     document.getElementById("chat-area").innerHTML +=  "Harambe: " + "Im fine, how are you?" + "<br>";
+     document.getElementById("chat-area").innerHTML +=  "ChatBot: " + "Im fine, how are you?" + "<br>";
    }
   /*How old areyou question*/
    else if(a > -1){
-     document.getElementById("chat-area").innerHTML +=  "Harambe: " + "I am a robot, I have no age" + "<br>";
+     document.getElementById("chat-area").innerHTML +=  "ChatBot: " + "I am a robot, I have no age" + "<br>";
    }
 
    /*What is your name question*/
    else if(b > -1){
-    document.getElementById("chat-area").innerHTML +=  "Harambe:    You can call me H A R A M B E" + "<br>";
+    document.getElementById("chat-area").innerHTML +=  "ChatBot:    You can call me H A R A M B E" + "<br>";
   }
 
   /*What is the time question*/
   else if(c > -1 || c1 > -1 || c2 > -1 || c3 > -1 || c4 > -1){
-   document.getElementById("chat-area").innerHTML += "Harambe: " + Date() + "<br>";
+   document.getElementById("chat-area").innerHTML += "ChatBot: " + Date() + "<br>";
  }
 
  /**/
 
  /*M E M E S*/
  else if(d > -1){
-  document.getElementById("chat-area").innerHTML += "Harambe:    Nice meme haHAA" + "<br>";
-  audio.play();
+  document.getElementById("chat-area").innerHTML += "ChatBot:    Nice meme haHAA" + "<br>";
+
 }
 
 /*show me a picture*/
@@ -71,14 +76,14 @@ else if(e > -1){
  x.setAttribute("src","http://i2.mirror.co.uk/incoming/article8075004.ece/ALTERNATES/s615b/Harambe.jpg");
  x.setAttribute("width",  "150");
  x.setAttribute("width",  "150");
- x.setAttribute("alt", "Harambe");
- document.getElementById("chat-area").innerHTML += "Harambe: ";
+ x.setAttribute("alt", "ChatBot");
+ document.getElementById("chat-area").innerHTML += "ChatBot: ";
  document.getElementById("chat-area").appendChild(x);
  document.getElementById("chat-area").innerHTML += "<br>";
 }
 /*whats your favorite song*/
 else if(f > -1){
- document.getElementById("chat-area").innerHTML += "Harambe:    Im here in spirit, son. . ." + "<br>";
+ document.getElementById("chat-area").innerHTML += "ChatBot:    I like many different songs!" + "<br>";
  audio2.play();
 }
 
@@ -86,7 +91,7 @@ else if(f > -1){
 
 
    else{
-    document.getElementById("chat-area").innerHTML +=  "Harambe:    Thats cool!" + "<br>"
+    document.getElementById("chat-area").innerHTML +=  "ChatBot:    Thats cool!" + "<br>"
    }
    document.getElementById("input").value = null;
 }
