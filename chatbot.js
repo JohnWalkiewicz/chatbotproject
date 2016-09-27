@@ -7,9 +7,13 @@ function submitButton() {
    input =  document.getElementById("input").value;
    question = input + "<br>";
 
+/*Enter key*/
+
+
 //*Variables for all the Questions/responses*//
 
   var audio = new Audio('idubbbz.mp3');
+  var audio2 = new Audio('ripharambe.mp3');
 
    var n = input.search(/how are you?/i);
    var a = input.search(/how old are you?/i);
@@ -23,7 +27,7 @@ function submitButton() {
 
    var d = input.search(/hey thats pretty good/i);
    var e = input.search(/show me a picture/i);
-   var f = input.search(/what is your favorite song/i);
+   var f = input.search(/what is your favorite song?/i);
 
 
 
@@ -68,18 +72,28 @@ else if(e > -1){
  x.setAttribute("width",  "150");
  x.setAttribute("width",  "150");
  x.setAttribute("alt", "Harambe");
- document.getElementById("chat-area").innerHtml += "Harambe: ";
+ document.getElementById("chat-area").innerHTML += "Harambe: ";
  document.getElementById("chat-area").appendChild(x);
- document.getElementById("chat-area").innerHtml += "<br>";
+ document.getElementById("chat-area").innerHTML += "<br>";
 }
-/*whats your fav song*/
-else if(d > -1){
- document.getElementById("chat-area").innerHTML += "Harambe:    Nice meme haHAA" + "<br>";
- audio.play();
+/*whats your favorite song*/
+else if(f > -1){
+ document.getElementById("chat-area").innerHTML += "Harambe:    Im here in spirit, son. . ." + "<br>";
+ audio2.play();
 }
+
+
+
 
    else{
     document.getElementById("chat-area").innerHTML +=  "Harambe:    Thats cool!" + "<br>"
    }
    document.getElementById("input").value = null;
 }
+
+document.getElementById("input").addEventListener("keyup", function(event) {
+
+  if (event.keyCode == 13) {
+    document.getElementById("talkButton").click();
+  }
+});
