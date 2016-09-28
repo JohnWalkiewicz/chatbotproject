@@ -9,8 +9,8 @@ function submitButton() {
 
    /*Randon number generator*/
 
-   function randomNumberGenerator() {
-     return Math.floor(Math.random()*(max-min+1)+min);
+   function randomNumberGenerator(max,min) {
+     return Math.floor((Math.random() * helloResponse.length));
    }
 
 /*Enter key*/
@@ -34,18 +34,25 @@ function submitButton() {
    var e = input.search(/show me a picture/i);
    var f = input.search(/what is your favorite song?/i);
 
+   /*Random Responses*/
+  var helloResponse = ["Hello there!", "Hi!", "Hola!", "Hello welcome to chat bot"];
+   var nResponse = ["Im fine, how are you!", "Im doing swell, you?", "Im just a robot"];
+   var aResponse =
+
 
 
    chatBox = document.getElementById("chat-area").innerHTML +=  "You: " + question;
 
 /*Hello*/
    if(input == "hello" || input =="Hello" || input=="hi" || input == "Hi"){
-     document.getElementById("chat-area").innerHTML +=  "ChatBot: " + "Hello there! nice to meet you" + "<br>";
+
+     document.getElementById("chat-area").innerHTML +=  "ChatBot: " + helloResponse[randomNumberGenerator(0,3)] + "<br>";
    }
    /*how are you response*/
 
    else if(n > -1){
-     document.getElementById("chat-area").innerHTML +=  "ChatBot: " + "Im fine, how are you?" + "<br>";
+
+     document.getElementById("chat-area").innerHTML +=  "ChatBot: " + nResponse[randomNumberGenerator(0,2)] + "<br>";
    }
   /*How old areyou question*/
    else if(a > -1){
@@ -73,7 +80,7 @@ function submitButton() {
 /*show me a picture*/
 else if(e > -1){
  var x = document.createElement("IMG");
- x.setAttribute("src","http://i2.mirror.co.uk/incoming/article8075004.ece/ALTERNATES/s615b/Harambe.jpg");
+ x.setAttribute("src","http://feelgrafix.com/data/pictures/pictures-2.jpg");
  x.setAttribute("width",  "150");
  x.setAttribute("width",  "150");
  x.setAttribute("alt", "ChatBot");
