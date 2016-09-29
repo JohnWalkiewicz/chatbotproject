@@ -51,6 +51,7 @@ function submitButton() {
    var bResponse = ["My name is chatbot, what is yours?", "Me llamo es chatbot, y tu?", "Names don't matter", "Any name you prefer!"];
    var fResponse = ["I like many different songs, you?", "Im a fan of the pop genre, what about you?", "Im into rap music,  what about  you?", "Im not really a fan of music."];
    var jResponse = ["Whatever you want it to be.", "Everything", "Harambe could tell you, but he's not here anymore" ,"Be happy and help others be happy!:)"];
+   var kResponse = ["Im an AI", "Im your friend of course!" , "Im a program built in to respond to your questions" , "Im a human"];
 
   /*Random responses for keywords*/
 
@@ -135,6 +136,12 @@ else if(h > -1){
 
 else if(i > -1){
  document.getElementById("chat-area").innerHTML += "ChatBot:" + iResponse[randomNumberGenerator(0,3)] + "<br>";
+
+}
+/*What are you question*/
+
+else if(k > -1){
+ document.getElementById("chat-area").innerHTML += "ChatBot:" + kResponse[randomNumberGenerator(0,3)] + "<br>";
 
 }
 
